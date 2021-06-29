@@ -1,9 +1,12 @@
 {
-  "name": "my-new-app",
-  "productName": "my-new-app",
+  "name": "ef2384minimalapp",
   "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "src/index.js",
+  "description": "minimum project to replicate https://github.com/electron-userland/electron-forge/issues/2348",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HexCodeFFF/ef2384minimalapp.git"
+  },
+  "main": "index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -12,10 +15,17 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
+  "author": "hexcodefff",
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "icon.ico",
+        "ignore": [
+          ".github",
+          ".idea"
+        ]
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -24,26 +34,13 @@
             "setupIcon": "icon.ico",
             "iconUrl": "https://github.com/HexCodeFFF/aidatasetfromvideo/blob/master/icon.ico?raw=true"
           }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
         }
       ]
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "update-electron-app": "^2.0.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.57",
